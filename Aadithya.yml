@@ -1,5 +1,6 @@
 ---
 - hosts: linux
+  user: root
 
   vars:
     motd: "Welcome to RedHat Enterprise - Mr. Harish Ravipati"
