@@ -7,4 +7,4 @@
       copy:
         src: /home/ubuntu/ansible/hosts
         dest: /home/ubuntu/ravipati
-        mode: 755
+        mode: '0755'
