@@ -26,6 +26,7 @@
       copy:
         content: "{{motd}}"
         dest: /etc/motd
+      notify: MOTD changed
       when: ansible_distribution == "RedHat"
   handlers:
     - name: MOTD changed
