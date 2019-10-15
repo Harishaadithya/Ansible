@@ -1,0 +1,22 @@
+---
+
+myname: Harish
+
+myfamily:
+  mom: Padmalatha
+  wife: Sarayu
+  son: Aadithya Srikar
+
+myfamily_inline:
+  {mom: Padmalatha}
+  {wife: Sarayu}
+  {son: Aadithya Srikar}
+
+myhobbies:
+  - Reading Books
+  - Playing cricket
+  - Watching movies
+  - Collecting Coins
+
+myhobbies_inline:
+  [Reading Books, Playign cricket, Watching movies, Collecting Coins]
