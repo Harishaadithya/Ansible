@@ -8,9 +8,7 @@ myfamily:
   son: Aadithya Srikar
 
 myfamily_inline:
-  {mom: Padmalatha}
-  {wife: Sarayu}
-  {son: Aadithya Srikar}
+  {mom: Padmalatha, wife: Sarayu, son: Aadithya Srikar}
 
 myhobbies:
   - Reading Books
