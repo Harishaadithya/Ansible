@@ -27,3 +27,7 @@
         content: "{{motd}}"
         dest: /etc/motd
       when: ansible_distribution == "RedHat"
+  handlers:
+    - name: MOTD changed
+      debug:
+        msg: The MOTD was changed
