@@ -1,0 +1,18 @@
+---
+- hosts: ubuntu
+  user: ubuntu
+
+  tasks:
+    - name: Creating File
+      file:
+      path: /home/ubuntu/ravipati/Srikar.txt
+      state: touch
+    - name: In line Content
+      copy:
+        content: 'Hello AadithyaSrikar'
+        dest: /home/ubuntu/ravipati/Srikar.txt
+    - name: Copying file
+      copy:
+        src: /home/ubuntu/ansible/hosts
+        dest: /home/ubuntu/ravipati
+        mode: '0755'    
