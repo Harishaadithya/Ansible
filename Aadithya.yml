@@ -1,3 +1,10 @@
 ---
 - hosts: ubuntu
   user: ubuntu
+
+  tasks:
+    - name: Copying file
+      copy:
+        src: /home/ubuntu/ansible/hosts
+        dest: /home/ubuntu/ravipati
+        mode: 755
