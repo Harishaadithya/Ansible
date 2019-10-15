@@ -5,8 +5,8 @@
   tasks:
     - name: Creating File
       file:
-      path: /home/ubuntu/ravipati/Srikar.txt
-      state: touch
+        path: /home/ubuntu/ravipati/Srikar.txt
+        state: touch
     - name: In line Content
       copy:
         content: 'Hello AadithyaSrikar'
