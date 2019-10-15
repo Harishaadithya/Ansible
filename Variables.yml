@@ -2,6 +2,9 @@
 - hosts: ubuntu01
   gather_facts: false
 
+  vars_prompt:
+    - name: username
+    
   vars_files:
     - vars.yml
 
@@ -18,4 +21,6 @@
     - name: My Hobbies
       debug:
         msg: "{{ myhobbies.1 }}"
-    
+    - name: username
+      debug:
+        msg: "{{ username }}"
