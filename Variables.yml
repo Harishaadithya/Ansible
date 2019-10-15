@@ -18,9 +18,6 @@
     - name: My Hobbies
       debug:
         msg: "{{ myhobbies.1 }}"
-    - name: username
-      debug:
-        msg: "{{ username }}"
     - name: Hostvars
       debug:
         msg: "{{ hostvars[ansible_hostname].ansible_user }}"
