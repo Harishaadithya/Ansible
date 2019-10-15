@@ -14,7 +14,7 @@
         msg: "{{ myfamily }}"
     - name: MOM Name
       debug:
-        msg: "{{ myfamily.mom, myfamily.wife, myfamily.son }}"
+        msg: "{{ myfamily.mom}, {myfamily.wife}, {myfamily.son }}"
     - name: My Hobbies
       debug:
         msg: "{{ myhobbies.1 }}"
