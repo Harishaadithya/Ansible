@@ -3,7 +3,7 @@
   user: root
 
   vars:
-    motd: "Welcome to RedHat Enterprise - Mr. Harish Ravipati"
+    motd: "Welcome to RedHat Enterprise - Mr. Aadithya Srikar"
 
   tasks:
     - name: Creating File
