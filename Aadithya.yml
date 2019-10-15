@@ -15,4 +15,4 @@
       copy:
         src: /home/ubuntu/ansible/hosts
         dest: /home/ubuntu/ravipati
-        mode: '0755'    
+        mode: '0400'
