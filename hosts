@@ -1,0 +1,20 @@
+[control]
+ansible ansible_connection=local
+
+[centos]
+centos[01:02]
+
+[centos:vars]
+ansible_user=ec2-user
+
+[ubuntu]
+ubuntu[01:02]
+
+[ubuntu:vars]
+ansible_user=ubuntu
+
+[linux:children]
+ubuntu
+centos
+
+
