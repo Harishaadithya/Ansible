@@ -1,19 +1,28 @@
 ---
-- hosts: ubuntu
-  user: ubuntu
-  gather_facts: false
+- hosts: linux
+
+  vars:
+    motd: "Welcome to RedHat Enterprise - Mr. Harish Ravipati"
 
   tasks:
     - name: Creating File
       file:
         path: /home/ubuntu/ravipati/Srikar.txt
         state: touch
+        when: ansible_distribution == "Ubuntu"
     - name: In line Content
       copy:
         content: 'Hello AadithyaSrikar'
         dest: /home/ubuntu/ravipati/Srikar.txt
+        when: ansible_distribution == "Ubuntu"
     - name: Copying file
       copy:
         src: /home/ubuntu/ansible/hosts
         dest: /home/ubuntu/ravipati
         mode: '0400'
+        when: ansible_distribution == "Ubuntu"
+    - name: motd
+      copy:
+        content: "{{motd}}"
+        dest: /etc/motd
+        when: ansible_distribution == "RedHat"
