@@ -6,5 +6,9 @@
         msg: >
              --== Ansible Jinja2 if elif else statement ==--
              {% if ansible_hostname == "centos01" -%}
-                  This is ansible hostname for centos01
+                This is ansible hostname for centos01
+             {% elif ansible_hostname == "ubuntu01" -%}
+                This is ansible hostname for ubuntu01
+             {% else -%}
+                This is Harish Ravipati {{ ansible_hostname }}
              {% endif %}
