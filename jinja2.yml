@@ -11,3 +11,10 @@
              {% else -%}
                 This is Harish Ravipati {{ ansible_hostname }}
              {% endif %}
+
+    - name: For loop
+      debug:
+        msg: >
+             {% for entry in ansible_all_ipv4_addresses -%}
+             My IP Addresses {{ loop.index }} = {{ entry }}
+             {% endfor %}
