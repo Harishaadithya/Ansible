@@ -4,6 +4,6 @@
     - name: Centos Hostname
       debug:
         msg: >
-             {% if ansible_hostname == centos01 -%}
+             {% if ansible_hostname == "centos01" -%}
                   This is "ansible hostname for centos01"
              {% endif %}
