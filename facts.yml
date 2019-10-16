@@ -1,8 +1,14 @@
 ---
-- hosts: linux
+- hosts: ansible
   gather_facts: true
 
   tasks:
     - name: Default IP Address
       debug:
         msg: "{{ ansible_default_ipv4.address }}"
+    - name: Reload Facts
+      setup:
+        fact_path: /home/ubuntu/ansible/facts.d
+    - name:
+      debug:
+        msg: "{{ ansible_local.getdate }}"
