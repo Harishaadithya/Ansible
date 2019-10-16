@@ -1,0 +1,11 @@
+---
+- hosts: linux
+  tasks:
+    - name: Centos Hostname
+      debug:
+        msg: >
+              --== Ansible Jinja2 if elif else statement ==--
+
+              {% if ansible_hostname == ec2-user -%}
+                  This is ec2-user "centos hostname"
+              {% endif %}
