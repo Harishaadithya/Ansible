@@ -4,13 +4,8 @@
   gather_facts: true
 
   tasks:
-    - name: pusky
-      apt:
-        state: latest
-
     - name: Installing Java
-      apt:
-        update_cache: yes
+      package:
         name: openjdk-8-jdk
         state: latest
       when:
