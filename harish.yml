@@ -1,6 +1,16 @@
 ---
-- hosts: centos
-  user: ec2-user
+- hosts: all
+  user: root
+  gather_facts: true
 
   tasks:
-  
+    - name: Installing Apache Tomcat
+      get_url:
+          dest: /home/ubuntu/
+          url: http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.47/bin/apache-tomcat-8.5.47.tar.gz
+      when:
+        ansible_distribution == "Ubuntu"
+    - name: Unzipping Apache Tomcat
+      unarchive:
+          src: /home/ubuntu/apache-tomcat-8.5.47.tar.gz
+          dest: /home/ubuntu/
