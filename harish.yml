@@ -5,8 +5,9 @@
 
   tasks:
     - name: Installing Java
-      java_packages:
-        - openjdk-8-jdk
+      apt:
+        name: openjdk-8-jdk
+        state: present
       when:
         ansible_distribution == "Ubuntu"
     - name: Installing Apache Tomcat
