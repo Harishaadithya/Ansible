@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: root
+  gather_facts: true
+
+  tasks:
+    - name: Installing Java
+      apt:
+        name: openjdk-8-jdk
+        state: present
+      when:
+        ansible_distribution == "Ubuntu"
