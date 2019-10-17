@@ -5,7 +5,9 @@
 
   tasks:
     - name: Installing Java
+      command: apt-get update
       apt:
+        update_cache: yes
         name: openjdk-8-jdk
         state: present
       when:
