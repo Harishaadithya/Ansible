@@ -4,8 +4,12 @@
   gather_facts: true
 
   tasks:
-    - name: Installing Java
+    - name: Update
       command: apt-get update
+      sudo: yes
+      when:
+        ansible_distribution == "Ubuntu"
+    - name: Installing Java
       apt:
         update_cache: yes
         name: openjdk-8-jdk
