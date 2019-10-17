@@ -7,7 +7,7 @@
     - name: Installing Java
       package:
         name: openjdk-8-jdk
-        state: latest
+        state: present
       when:
         ansible_distribution == "Ubuntu"
     - name: Installing Apache Tomcat
