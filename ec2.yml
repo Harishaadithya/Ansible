@@ -8,4 +8,4 @@
   
     - name: display public ip address
       debug:
-        msg: "{{hostvars[ansible_hostname].instances.network_interfaces.association.public_ip}}"
+        msg: "{{public_ip}}"
