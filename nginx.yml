@@ -4,7 +4,10 @@
   gather_facts: false
 
   tasks:
+    - name: update system
+      package:
+
     - name: Installing Nginx
-      apt:
+      package:
         name: nginx
         state: present
