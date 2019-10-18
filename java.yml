@@ -1,14 +1,11 @@
 ---
-- hosts: all
-  user: root
-  gather_facts: true
+- hosts: ubuntu01
+  become: yes
+  gather_facts: false
 
   tasks:
     - name: Installing Java
       apt:
-        sudo: yes
         update_cache: yes
         name: openjdk-8-jdk
         state: present
-      when:
-        ansible_distribution == "Ubuntu"
