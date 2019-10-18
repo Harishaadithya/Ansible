@@ -9,4 +9,9 @@
   
     - name: display public ip address
       debug:
-        var: publicip.instances.instance_id
+        var: publicip.instances
+      register: test2
+
+    - name: waka waka
+      debug:
+        var: test2
