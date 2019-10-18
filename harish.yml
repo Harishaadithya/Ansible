@@ -13,4 +13,4 @@
           src: /home/ubuntu/apache-tomcat-8.5.47.tar.gz
           dest: /home/ubuntu/
     - name: Enabling Apache Tomcat
-      shell: /home/ubuntu/apache-tomcat-8.5.47/bin/startup.sh
+      shell: nohup /home/ubuntu/apache-tomcat-8.5.47/bin/startup.sh
