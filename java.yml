@@ -4,15 +4,10 @@
   gather_facts: true
 
   tasks:
-    - name: Update
-      command: apt-get update
-      sudo: yes
-      when:
-        ansible_distribution == "Ubuntu"
     - name: Installing Java
-      apt:
+      yum:
         update_cache: yes
         name: openjdk-8-jdk
         state: present
       when:
-        ansible_distribution == "Ubuntu"
+        ansible_distribution == "RedHat"
