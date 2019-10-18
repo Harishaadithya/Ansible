@@ -10,7 +10,7 @@
         state: present
 
     - name: Download web template
-      shell: cd /home/ubuntu/ && wget -o web.zip https://www.tooplate.com/download/2114_pixie
+      shell: cd /home/ubuntu/ && wget -o web.zip https://www.tooplate.com/download/2114_pixie && chown ubuntu:ubuntu web.zip
 
     - name: unzip
       unarchive:
