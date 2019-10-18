@@ -24,8 +24,9 @@
     
     - name: copy files to nginx html directory
       copy: 
-        src: /home/ubuntu/power/*
+        src: /home/ubuntu/templatemo_508_power/*
         dest: /usr/share/nginx/html/
+        remote_src: yes
       notify: restart nginx
 
 
