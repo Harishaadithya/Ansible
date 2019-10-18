@@ -14,6 +14,7 @@
           dest: /home/ubuntu/
           url: https://www.free-css.com/assets/files/free-css-templates/download/page245/power.zip
           owner: ubuntu
+          group: ubuntu
 
     - name: unzip
       unarchive:
