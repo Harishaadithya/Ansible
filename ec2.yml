@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu
+- hosts: ansible
 
   tasks:
     - name: gather ec2-facts
