@@ -9,4 +9,4 @@
   
     - name: display public ip address
       debug:
-        msg: "{{public_ip}}"
+        var: publicip
