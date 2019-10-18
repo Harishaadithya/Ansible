@@ -1,24 +1,16 @@
 ---
 - hosts: ubuntu01,ubuntu02
   user: ubuntu
-  gather_facts: true
+  gather_facts: false
 
   tasks:
     - name: Installing Apache Tomcat
       get_url:
           dest: /home/ubuntu/
           url: http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.47/bin/apache-tomcat-8.5.47.tar.gz
-      when:
-        ansible_distribution == "Ubuntu"
     - name: Unzipping Apache Tomcat
       unarchive:
           src: /home/ubuntu/apache-tomcat-8.5.47.tar.gz
           dest: /home/ubuntu/
-      when:
-        ansible_distribution == "Ubuntu"
     - name: Enabling Apache Tomcat
       shell: /home/ubuntu/apache-tomcat-8.5.47/bin/startup.sh
-      when:
-        ansible_distribution == "Ubuntu" 
-    - name: Installing Nginx
-      apt:
