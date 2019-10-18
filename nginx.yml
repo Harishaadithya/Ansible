@@ -1,0 +1,10 @@
+---
+- hosts: all
+  user: root
+  gather_facts: false
+
+  tasks:
+    - name: Installing Nginx
+      apt:
+        name: nginx
+        state: present

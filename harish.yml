@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  user: ubuntu
+  user: root
   gather_facts: false
 
   tasks:
