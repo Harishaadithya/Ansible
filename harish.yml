@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  user: root
+- hosts: ubuntu01,ubuntu02
+  user: ubuntu
   gather_facts: true
 
   tasks:
@@ -19,4 +19,6 @@
     - name: Enabling Apache Tomcat
       shell: /home/ubuntu/apache-tomcat-8.5.47/bin/startup.sh
       when:
-        ansible_distribution == "Ubuntu"          
+        ansible_distribution == "Ubuntu" 
+    - name: Installing Nginx
+      apt:
