@@ -9,4 +9,4 @@
   
     - name: display public ip address
       debug:
-        var: publicip.instances[network_interfaces]
+        var: publicip.instances
