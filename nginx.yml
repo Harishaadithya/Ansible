@@ -1,11 +1,15 @@
 ---
 - hosts: all
-  user: root
-  gather_facts: false
+  become: yes
+  gather_facts: true
 
   tasks:
     - name: update system
-      package:
+      yum:
+        name: epel-release
+        update_cache: yes
+        state: latest
+      when: ansible_distribution == "RedHat"
 
     - name: Installing Nginx
       package:
