@@ -22,10 +22,15 @@
           dest: /home/ubuntu/
           remote_src: yes
     
+    - name: delete file
+      file:
+        path: /var/www/html/index.nginx-debian.html
+        state: absent
+
     - name: copy files to nginx html directory
       copy: 
         src: /home/ubuntu/templatemo_508_power/
-        dest: /usr/share/nginx/html/
+        dest: /var/www/html/
         remote_src: yes
       notify: restart nginx
 
