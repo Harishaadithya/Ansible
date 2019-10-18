@@ -20,6 +20,7 @@
       unarchive:
           src: /home/ubuntu/power.zip
           dest: /home/ubuntu/
+          remote_src: yes
     
     - name: copy files to nginx html directory
       copy: 
