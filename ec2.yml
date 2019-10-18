@@ -8,4 +8,4 @@
   
     - name: display public ip address
       debug:
-        msg: {{instances.network_interfaces.association.public_ip}}
+        msg: "{{instances.network_interfaces.association.public_ip}}"
