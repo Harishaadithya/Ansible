@@ -10,16 +10,16 @@
         state: present
 
     - name: Download web template
-      shell: cd /home/ubuntu/ && wget -o harish.zip https://www.tooplate.com/download/2114_pixie
+      shell: cd /home/ubuntu/ && wget -o web.zip https://www.tooplate.com/download/2114_pixie
 
     - name: unzip
       unarchive:
-          src: /home/ubuntu/harish.zip
+          src: /home/ubuntu/web.zip
           dest: /home/ubuntu/
     
     - name: copy files to nginx html directory
       copy: 
-        src: /home/ubuntu/harish/*
+        src: /home/ubuntu/web/*
         dest: /usr/share/nginx/html/
       notify: restart nginx
 
