@@ -10,16 +10,18 @@
         state: present
 
     - name: Download web template
-      shell: cd /home/ubuntu/ && wget -o web.zip https://www.tooplate.com/download/2114_pixie && chown ubuntu:ubuntu web.zip
+      get_url:
+          dest: /home/ubuntu/
+          url: https://www.free-css.com/assets/files/free-css-templates/download/page245/power.zip
 
     - name: unzip
       unarchive:
-          src: /home/ubuntu/web.zip
+          src: /home/ubuntu/power.zip
           dest: /home/ubuntu/
     
     - name: copy files to nginx html directory
       copy: 
-        src: /home/ubuntu/web/*
+        src: /home/ubuntu/power/*
         dest: /usr/share/nginx/html/
       notify: restart nginx
 
