@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+
+  tasks:
+    - name: gather ec2-facts
+      ec2_instance_facts:
+        region: us-east-2
+  
+    - name: display public ip address
+      debug:
+        msg: {{instances.network_interfaces.association.public_ip}}
