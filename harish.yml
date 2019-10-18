@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu01,ubuntu02
+- hosts: all
   user: ubuntu
   gather_facts: false
 
