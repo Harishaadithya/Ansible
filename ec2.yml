@@ -5,6 +5,7 @@
     - name: gather ec2-facts
       ec2_instance_facts:
         region: us-east-2
+      register: publicip
   
     - name: display public ip address
       debug:
