@@ -13,6 +13,7 @@
       get_url:
           dest: /home/ubuntu/
           url: https://www.free-css.com/assets/files/free-css-templates/download/page245/power.zip
+          owner: ubuntu
 
     - name: unzip
       unarchive:
