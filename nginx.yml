@@ -1,7 +1,7 @@
 ---
 - hosts: ubuntu
   become: yes
-  gather_facts: true
+  gather_facts: false
 
   tasks:
     - name: Installing Nginx
@@ -32,7 +32,9 @@
         src: /home/ubuntu/templatemo_508_power/
         dest: /var/www/html/
         remote_src: yes
-      notify: restart nginx
+      notify:
+        - restart nginx
+        - Check HTTP service
 
 
   handlers:
@@ -40,3 +42,7 @@
       service:
         name: nginx
         state: restarted
+    - name: Check HTTP service
+      uri:
+        url: http://{{ ansible_default_ipv4.address }}
+        status_code: 200

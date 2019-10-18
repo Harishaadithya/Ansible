@@ -1,0 +1,8 @@
+---
+- hosts: ubuntu
+  become: true
+
+  tasks:
+    - name: Wait for Nginx
+      wait_for:
+        port: 80
