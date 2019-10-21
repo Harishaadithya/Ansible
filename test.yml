@@ -1,8 +1,9 @@
 ---
-- hosts: ubuntu
+- hosts: centos
   become: true
 
   tasks:
-    - name: Wait for Nginx
-      wait_for:
-        port: 80
+    - name: Fetch
+      fetch:
+          dest: /tmp/harish
+          src: /etc/redhat-release
