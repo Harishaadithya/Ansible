@@ -17,13 +17,15 @@
               - Aadithya
         - members
 
+...
+
 ---
 
 - hosts: ubuntu01
   become: true
 
   tasks:
-  
+
     - name: Creating a user directory
       file:
         dest: "/home/{{ item.0 }}/{{ item.1 }}"
