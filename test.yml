@@ -1,9 +1,16 @@
 ---
-- hosts: centos
+- hosts: ubuntu01
   become: true
 
   tasks:
-    - name: Fetch
-      fetch:
-          dest: /tmp/harish
-          src: /etc/redhat-release
+    - name: Creating Users
+      user:
+        name: {{ item.key }}
+        content: {{ item.value.surname }}
+      with_dict:
+        Harish:
+          surname: Ravipati
+        Saidalli:
+          surname: shaik
+        Srikanth:
+          surname: puttapaka
