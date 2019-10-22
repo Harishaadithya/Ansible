@@ -7,6 +7,7 @@
       user:
         name: "{{ item.key }}"
         comment: "{{ item.value.surname }}"
+        state: absent
       with_dict:
         Harish:
           surname: Ravipati
