@@ -1,6 +1,6 @@
 ---
 - hosts: ubuntu01
-  become: true
+  user: root
 
   tasks:
     - name: Creating Users
@@ -16,15 +16,6 @@
               - Sarayu
               - Aadithya
         - members
-
-...
-
----
-
-- hosts: ubuntu01
-  become: true
-
-  tasks:
 
     - name: Creating a user directory
       file:
