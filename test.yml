@@ -7,6 +7,7 @@
       user:
         name: "{{ item.1 }}"
         comment: "{{ item.1 | title }} {{ item.0.surname }}"
+        state: absent
       with_subelements:
         - family:
             surname: ravipati
@@ -21,7 +22,7 @@
         dest: "/home/{{ item.0 }}/{{ item.1 }}"
         owner: "{{ item.0 }}"
         group: "{{ item.0 }}"
-        state: directory
+        state: absent
       with_nested:
         - [ Harish, Sarayu, Aadithya ]
         - [ photos, movies, documents ]
