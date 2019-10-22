@@ -5,13 +5,12 @@
   tasks:
     - name: Creating Users
       user:
-        name: "{{ item.key }}"
-        comment: "{{ item.value.surname }}"
-        state: absent
-      with_dict:
-        Harish:
-          surname: Ravipati
-        Saidalli:
-          surname: shaik
-        Srikanth:
-          surname: puttapaka
+        name: "{{ item.1 }}"
+        comment: "{{ item.1 | title }} {{ item.0.surname }}"
+      with_subelements:
+        - family:
+          surname: ravipati
+          members:
+            - Harish
+            - Sarayu
+            - Aadithya
