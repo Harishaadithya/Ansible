@@ -9,8 +9,9 @@
         comment: "{{ item.1 | title }} {{ item.0.surname }}"
       with_subelements:
         - family:
-          surname: ravipati
-          members:
-            - Harish
-            - Sarayu
-            - Aadithya
+            surname: ravipati
+            members:
+              - Harish
+              - Sarayu
+              - Aadithya
+        - members
