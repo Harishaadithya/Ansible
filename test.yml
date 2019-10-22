@@ -5,8 +5,8 @@
   tasks:
     - name: Creating Users
       user:
-        name: {{ item.key }}
-        content: {{ item.value.surname }}
+        name: "{{ item.key }}"
+        comment: "{{ item.value.surname }}"
       with_dict:
         Harish:
           surname: Ravipati
