@@ -2,6 +2,9 @@
 
 - hosts: linux
   become: true
+  
+  var:
+    jobids: []
 
   tasks:
     - name: Task 01
@@ -18,12 +21,20 @@
       poll: 0
       register: centos
 
+#    - name: Capture Job Ids
+#      set_fact:
+#        jobids: >
+#                {% if item.ansible_job_id is defined -%}
+#                  {{ jobids + [item.ansible_job_id] }}
+#                {% else -%}
+#                  {{ jobids }}
+#                {% endif %}
+#      with_items: "{{ [ubuntu, centos] }}"
+
     - name: Check for Status
       async_status:
           jid: "{{ item.ansible_job_id }}"
-      with_items:
-        - ubuntu
-        - centos
+      with_items: "{{ [ ubuntu, centos ] }}"
       register: job_result
       until: job_result.finished
       retries: 30
