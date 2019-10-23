@@ -9,9 +9,21 @@
       when: ansible_hostname == "ubuntu"
       async: 10
       poll: 0
+      register: ubuntu
 
     - name: Task 02
       command: /bin/sleep 5
       when: ansible_hostname == "centos"
       async: 10
       poll: 0
+      register: centos
+
+    - name: Check for Status
+      async_status:
+          jid: "{{ item.ansible_job_id }}"
+      with_items:
+        - ubuntu
+        - centos
+      register: job_result
+      until: job_result.finished
+      retries: 30
