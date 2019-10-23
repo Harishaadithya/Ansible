@@ -1,0 +1,17 @@
+---
+
+- hosts: linux
+  become: true
+
+  tasks:
+    - name: Task 01
+      command: /bin/sleep 5
+      when: ansible_hostname == "ubuntu"
+      async: 10
+      poll: 0
+
+    - name: Task 02
+      command: /bin/sleep 5
+      when: ansible_hostname == "centos"
+      async: 10
+      poll: 0
